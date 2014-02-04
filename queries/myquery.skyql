@@ -1,0 +1,12 @@
+WHEN action == 'homepage' THEN
+  SELECT count() INTO "step1"
+  WHEN action == 'login' WITHIN 0..1 STEPS THEN
+    SELECT count() INTO "step2"
+    WHEN action == 'checkout' WITHIN 0..1 STEPS THEN
+      SELECT count() INTO "step3"
+      WHEN action WITHIN 0..1 STEPS THEN
+        SELECT count() GROUP BY action
+      END
+    END
+  END
+END

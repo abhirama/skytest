@@ -1,0 +1,1 @@
+curl localhost:8585/tables/users/query --data-binary @foo.skyql

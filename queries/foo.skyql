@@ -1,0 +1,6 @@
+WHEN action == 'homepage' THEN
+  SELECT count() INTO "step1"
+  WHEN action == 'checkout' WITHIN 0..2 STEPS THEN
+    SELECT count() INTO "step2"
+  END
+END
